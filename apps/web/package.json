@@ -1,0 +1,31 @@
+{
+  "name": "@acme/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "build:analyze": "analyze"
+  },
+  "dependencies": {
+    "@acme/validation": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router": "^7.6.1"
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "^2.0.5",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react-swc": "^3.10.0",
+    "eslint": "catalog:",
+    "@acme/linting": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "typescript": "catalog:",
+    "vite": "^6.3.5",
+    "vite-bundle-analyzer": "^0.22.0"
+  }
+}

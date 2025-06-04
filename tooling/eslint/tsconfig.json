@@ -1,5 +1,5 @@
 {
-  "extends": "otle-tsconfig/base.json",
+  "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
     "module": "nodenext"
   },
