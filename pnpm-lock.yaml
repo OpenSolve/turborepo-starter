@@ -24,6 +24,9 @@ catalogs:
     react-dom:
       specifier: 19.0.0
       version: 19.0.0
+    react-hook-form:
+      specifier: ^7.56.4
+      version: 7.57.0
     tsup:
       specifier: ^8.5.0
       version: 8.5.0
@@ -55,6 +58,9 @@ importers:
 
   apps/expo-app:
     dependencies:
+      '@acme/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       '@expo/vector-icons':
         specifier: ^14.1.0
         version: 14.1.0(expo-font@13.3.1(expo@53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.1.6)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.1.6)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.1.6)(react@19.0.0))(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.1.6)(react@19.0.0))(react@19.0.0)
@@ -115,6 +121,9 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
+      react-hook-form:
+        specifier: 'catalog:'
+        version: 7.57.0(react@19.0.0)
       react-native:
         specifier: 0.79.2
         version: 0.79.2(@babel/core@7.27.4)(@types/react@19.1.6)(react@19.0.0)
@@ -208,7 +217,7 @@ importers:
         specifier: 'catalog:'
         version: 19.0.0
       react-hook-form:
-        specifier: ^7.56.4
+        specifier: 'catalog:'
         version: 7.57.0(react@19.0.0)
       yup:
         specifier: ^1.6.1
