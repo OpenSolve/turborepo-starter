@@ -29,13 +29,7 @@ export default tseslint.config(
       ],
       '@typescript-eslint/no-non-null-assertion': 'error',
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
-      'no-restricted-imports': [
-        'error',
-        {
-          name: 'zod',
-          message: "Use `import { z } from 'zod/v4'` instead to ensure v4.",
-        },
-      ],
+      'no-console': 'error',
     },
   },
   {
