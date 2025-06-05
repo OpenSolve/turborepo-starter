@@ -3,9 +3,9 @@ import baseConfig from '@acme/linting/base';
 
 /** @type {import("eslint").Linter.Config} */
 export default [
+  {
+    ignores: ['.expo/**', 'expo-plugins/**', 'scripts/**', 'android/**', 'ios/**'],
+  },
   ...baseConfig,
   ...reactConfig,
-  {
-    ignores: ['.expo/**', 'expo-plugins/**', 'scripts/**'],
-  },
 ];

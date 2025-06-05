@@ -13,8 +13,7 @@
   "dependencies": {
     "@acme/validation": "workspace:*",
     "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-router": "^7.6.1"
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@nabla/vite-plugin-eslint": "^2.0.5",

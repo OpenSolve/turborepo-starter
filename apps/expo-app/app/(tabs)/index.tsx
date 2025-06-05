@@ -1,4 +1,4 @@
-import {useValidateLogin} from '@acme/validation';
+import {LoginDTO, useValidateLogin} from '@acme/validation';
 import React from 'react';
 import {Controller} from 'react-hook-form';
 import {Button, Platform, SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native';
@@ -10,8 +10,8 @@ const LoginPage = () => {
     formState: {errors},
   } = useValidateLogin();
 
-  const onSubmit = (data: any) => {
-    console.log('Login data:', data);
+  const onSubmit = (data: LoginDTO) => {
+    return data;
   };
 
   return (
