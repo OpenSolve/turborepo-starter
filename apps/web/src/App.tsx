@@ -1,8 +1,15 @@
 import './App.css';
-import AppRouter from './router/app-router';
+import LoginForm from './modules/auth/components/login-form';
+import HomePage from './modules/home/components/home-page';
 
 function App() {
-  return <AppRouter />;
+  return (
+    <section>
+      <HomePage />
+      <h2>Form with shared validation package</h2>
+      <LoginForm />
+    </section>
+  );
 }
 
 export default App;

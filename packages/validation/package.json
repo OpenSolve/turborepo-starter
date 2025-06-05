@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
-    "react-hook-form": "^7.56.4",
+    "react-hook-form": "catalog:",
     "yup": "^1.6.1"
   },
   "peerDependencies": {
