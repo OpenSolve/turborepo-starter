@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-lint:
     runs-on: ubuntu-latest
-    name: Build and lint
+    name: Lint and build
     timeout-minutes: 10
 
     steps:
