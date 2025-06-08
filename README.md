@@ -1,84 +1,118 @@
-# Turborepo starter
+# Turborepo Starter
 
-This Turborepo starter is maintained by the Turborepo core team.
+A template for building software using Turborepo, pnpm, and modern tooling. Designed to get you up and running quickly with a solid, scalable, and well-structured monorepo.
 
-## Using this example
+## Features
 
-Run the following command:
+- **Turborepo**: High-performance build system for monorepos.
+- **pnpm**: Fast, disk space-efficient package manager.
+- **TypeScript**: End-to-end type safety.
+- **React**: For building web and native applications.
+- **Expo**: For the React Native mobile application.
+- **Vite**: For the React web application.
+- **Shared Tooling**: Centralized ESLint and TypeScript configurations.
+- **Pre-configured CI**: GitHub Actions workflow for building and linting on every push.
+- **Pre-commit Hooks**: Automated code formatting with Husky and pretty-quick.
 
-```sh
-npx create-turbo@latest
-```
+## Monorepo Structure
 
-## What's inside?
+This repository uses a standard monorepo structure to organize applications and shared packages:
 
-This Turborepo includes the following packages/apps:
+- `apps/`: Contains the individual applications.
+  - `web`: A React web application built with Vite.
+  - `expo-app`: A React Native application built with Expo.
+- `packages/`: Contains shared packages that can be used across applications.
+  - `validation`: Shared validation schemas (e.g., for forms or API requests).
+- `tooling/`: Contains shared tooling configurations.
+  - `eslint`: Sharable ESLint configurations.
+  - `typescript`: Sharable TypeScript `tsconfig.json` files.
 
-### Apps and Packages
+## What's Inside?
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@acme/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@acme/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@acme/typescript-config`: `tsconfig.json`s used throughout the monorepo
+This Turborepo starter includes the following apps and packages:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Apps
 
-### Utilities
+- `apps/web`:
+  - A [Vite](https://vitejs.dev/)-powered React application.
+  - Uses shared `tsconfig.json` and ESLint configurations from the `tooling` directory.
+- `apps/expo-app`:
+  - An [Expo](https://expo.dev/) managed React Native application.
+  - Can share code and types with the `web` application.
 
-This Turborepo has some additional tools already setup for you:
+### Packages
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- `packages/validation`:
+  - A placeholder for your shared validation logic. A common choice here would be [Zod](https://zod.dev/).
 
-### Build
+### Tooling
 
-To build all apps and packages, run the following command:
+- `tooling/eslint`:
+  - `base.js`: The base ESLint configuration for all packages.
+  - `react.js`: A specialized ESLint configuration for React-based applications.
+- `tooling/typescript`:
+  - `base.json`: The base `tsconfig.json` for all packages.
+  - `internal-package.json`: A specialized `tsconfig.json` for internal packages that are not published to npm.
 
-```
-cd my-turborepo
-pnpm build
-```
+## Getting Started
 
-### Develop
+To get started with this template, follow these steps:
 
-To develop all apps and packages, run the following command:
+1.  **Clone the repository:**
 
-```
-cd my-turborepo
-pnpm dev
-```
+    ```bash
+    git clone https://github.com/blefnk/turborepo-starter.git
+    cd turborepo-starter
+    ```
 
-### Remote Caching
+2.  **Install dependencies:**
+    This project uses `pnpm` as its package manager.
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+    ```bash
+    pnpm install
+    ```
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+3.  **Run the development servers:**
+    This will start the development servers for all applications in the monorepo.
+    ```bash
+    pnpm dev
+    ```
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## Key Scripts
 
-```
-cd my-turborepo
-npx turbo login
-```
+Here are some of the most important scripts available at the root of the project:
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+| Script             | Description                                      |
+| ------------------ | ------------------------------------------------ |
+| `pnpm dev`         | Starts the development servers for all apps.     |
+| `pnpm build`       | Builds all apps and packages for production.     |
+| `pnpm lint`        | Lints all code in the monorepo.                  |
+| `pnpm format`      | Formats all code using Prettier.                 |
+| `pnpm analyze:web` | Analyzes the bundle size of the web application. |
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Shared Tooling
 
-```
-npx turbo link
-```
+This starter is configured with shared ESLint and TypeScript configurations to ensure consistency across the entire codebase.
 
-## Useful Links
+- **ESLint**: The configurations in `tooling/eslint` are extended by each app and package. For example, `apps/web/eslint.config.js` extends the shared configuration.
+- **TypeScript**: The `tsconfig.json` files in each app and package extend the base configurations from `tooling/typescript` to reduce boilerplate.
 
-Learn more about the power of Turborepo:
+## Dependency Management
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+This project uses [pnpm workspaces](https://pnpm.io/workspaces) to manage dependencies within the monorepo. The `pnpm-workspace.yaml` file at the root defines the locations of the packages.
+
+The `catalog` feature of pnpm is used in `pnpm-workspace.yaml` to ensure that all packages use the same versions of common dependencies like React and TypeScript.
+
+## CI/CD
+
+The `.github/workflows/ci.yml` file contains a GitHub Actions workflow that is triggered on every pull request to the `main` branch. This workflow performs the following checks:
+
+- Installs dependencies.
+- Builds all applications and packages.
+- Lints the entire codebase.
+
+This helps to ensure that the code is always in a good state before it gets merged.
+
+## Git Hooks
+
+This project uses [Husky](https://typicode.github.io/husky/) to manage Git hooks. A `pre-commit` hook is configured in `.husky/pre-commit` to run `pretty-quick --staged`, which formats the staged files using Prettier before each commit. This ensures that all committed code adheres to the defined code style.
