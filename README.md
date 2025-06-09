@@ -23,6 +23,8 @@ This provides a structured and scalable starting point and you can add new tools
 
 - **Pre-commit Hooks**: Automated code formatting with Husky and pretty-quick.
 
+- **Custom Generators**: Automate repetitive tasks.
+
 ## Monorepo Structure
 
 This repository uses a standard monorepo structure to organize applications and shared packages:
@@ -124,6 +126,8 @@ Here are some of the most important scripts available at the root of the project
 | `pnpm format` | Formats all code using Prettier. |
 
 | `pnpm analyze:web` | Analyzes the bundle size of the web application. |
+
+| `pnpm create:package` | Scaffold a new shared package. |
 
 ## Shared Tooling
 
