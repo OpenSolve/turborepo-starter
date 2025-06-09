@@ -15,17 +15,17 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: 'add',
         path: 'packages/{{name}}/package.json',
-        templateFile: 'templates/package.json.hb',
+        templateFile: 'templates/package.json.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{name}}/tsconfig.json',
-        templateFile: 'templates/tsconfig.json',
+        templateFile: 'templates/tsconfig.json.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{name}}/eslint.config.js',
-        templateFile: 'templates/eslint.config.js',
+        templateFile: 'templates/eslint.config.js.hbs',
       },
       async (answers) => {
         const {name} = answers as {name: string};
