@@ -208,27 +208,6 @@ importers:
         specifier: ^0.22.0
         version: 0.22.0
 
-  packages/models:
-    devDependencies:
-      '@acme/linting':
-        specifier: workspace:*
-        version: link:../../tooling/eslint
-      '@acme/tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/typescript
-      eslint:
-        specifier: 'catalog:'
-        version: 9.28.0
-      prettier:
-        specifier: 'catalog:'
-        version: 3.5.3
-      tsup:
-        specifier: 'catalog:'
-        version: 8.5.0(@swc/core@1.11.29)(postcss@8.5.4)(typescript@5.8.3)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.8.3
-
   packages/validation:
     dependencies:
       '@hookform/resolvers':
